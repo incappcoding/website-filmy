@@ -1,0 +1,42 @@
+
+         ////////////////////////////////// top scroll ////////////////////////////////////////// 
+const button = document.querySelector('#topbtn');
+
+const displayButton = () => {
+  window.addEventListener('scroll', () => {
+    console.log(window.scrollY);
+  
+    if (window.scrollY > 100) {
+      button.style.display = "block";
+    } else {
+      button.style.display = "none";
+    }
+  });
+};
+
+const scrollToTop = () => {
+  button.addEventListener("click", () => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    }); 
+    console.log(event);
+  });
+};
+
+displayButton();
+scrollToTop();
+
+
+
+
+var la = gsap.timeline(); 
+ 
+la.to("#loader_t, #loader_r, #loader_b, #loader_l",{
+    top:"-100vh",
+    delay:0.7,
+    duration:0.5,
+    stagger:0.2
+})
+
